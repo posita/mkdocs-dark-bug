@@ -1,0 +1,36 @@
+site_name: mkdocs-dark-bug
+site_description: Illustration of theme/scheme disconnect in squidfunk/mkdocs-material#2727
+site_author: Matt Bogosian
+repo_url: https://github.com/posita/mkdocs-dark-bug
+
+nav:
+  - Test case: index.md
+
+markdown_extensions:
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.superfences
+
+plugins:
+  - exclude:
+      glob:
+        - "*.py"
+  - search
+
+theme:
+  name: "material"
+  features:
+    - navigation.expand
+    - navigation.sections
+    - toc.integrate
+  palette:
+    - media: "(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
