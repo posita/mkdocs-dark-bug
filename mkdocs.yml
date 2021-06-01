@@ -6,7 +6,17 @@ repo_url: https://github.com/posita/mkdocs-dark-bug
 nav:
   - Test case: index.md
 
+extra_css:
+  - image_theme.css
+
+extra_javascript:
+  # Un-comment to test reactivity to prefers-color-scheme (consider commenting out the "toggle"
+  # sections under "theme" below)
+  # - image_theme.js
+  - image_theme_emulated.js
+
 markdown_extensions:
+  - admonition
   - pymdownx.highlight:
       linenums: true
   - pymdownx.superfences
@@ -24,13 +34,13 @@ theme:
     - navigation.sections
     - toc.integrate
   palette:
-    - media: "(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-      scheme: default
+    - scheme: default
+      media: "(prefers-color-scheme: light)"
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+    - scheme: slate
+      media: "(prefers-color-scheme: dark)"
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
