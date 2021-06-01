@@ -1,0 +1,4 @@
+img.dark { display: none; }
+img.light { display: unset; }
+[data-md-color-scheme="slate"] img.dark { display: unset; }
+[data-md-color-scheme="slate"] img.light { display: none; }
